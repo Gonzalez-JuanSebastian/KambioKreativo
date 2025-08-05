@@ -31,3 +31,7 @@ Route::get('/diseño', function () {
 Route::get('/desarrollo', function () {
     return view('desarrollo');
 })->name('desarrollo');
+
+Route::get('/marketing', function () {
+    return view('marketing');
+})->name('marketing');

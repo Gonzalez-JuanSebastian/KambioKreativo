@@ -227,6 +227,12 @@
                         Desarrollo
                         <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
                     </a>
+
+                    <a href="{{ route('marketing') }}" class="font-medium hover:text-primary2 transition-colors group">
+                        Marketing Digital
+                        <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
+                    </a>
+                    
                     <a href="#nosotros" class="font-medium hover:text-primary2 transition-colors group">
                         Nosotros
                         <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
@@ -620,11 +626,11 @@
                     
                     <form method="POST" action="{{ route('contacto.store') }}#contacto-form">
                         @csrf
-                    
-                        <!-- Campo Nombre -->
+
+                        <!-- Nombre completo -->
                         <div class="mb-6">
                             <label for="nombre" class="block text-detail2 mb-2">Nombre completo</label>
-                            <input type="text" id="nombre" name="nombre" 
+                            <input type="text" id="nombre" name="nombre"
                                    value="{{ old('nombre') }}"
                                    class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white"
                                    required>
@@ -633,11 +639,11 @@
                             @enderror
                         </div>
                     
-                        <!-- Campos Email y Empresa -->
+                        <!-- Email y Empresa -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <div>
                                 <label for="email" class="block text-detail2 mb-2">Correo electrónico</label>
-                                <input type="email" id="email" name="email" 
+                                <input type="email" id="email" name="email"
                                        value="{{ old('email') }}"
                                        class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white"
                                        required>
@@ -647,36 +653,30 @@
                             </div>
                             <div>
                                 <label for="empresa" class="block text-detail2 mb-2">Empresa</label>
-                                <input type="text" id="empresa" name="empresa" 
+                                <input type="text" id="empresa" name="empresa"
                                        value="{{ old('empresa') }}"
                                        class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white">
                             </div>
                         </div>
                     
-                        <!-- Campo Necesidad -->
+                        <!-- Necesidad / Servicio -->
                         <div class="mb-6">
-                            <label for="necesidad" class="block text-detail2 mb-2">¿Qué necesidad deseas resolver?</label>
-                            <select id="necesidad" name="servicio" 
+                            <label for="servicio" class="block text-detail2 mb-2">¿Qué necesidad deseas resolver?</label>
+                            <select id="servicio" name="servicio"
                                     class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white"
                                     required>
-                                                        <div class="mb-6">
-                            <label for="necesidad" class="block text-detail2 mb-2">¿Qué necesidad deseas resolver?</label>
-                            <select id="servicio" name="servicio"
-                                class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white">
-                                <option value="">Selecciona un servicio</option>
-                                <option value="diseno">Diseño Gráfico</option>
-                                <option value="marketing">Marketing Digital</option>
-                                <option value="software">Desarrollo de Software</option>
-                                <option value="multiple">Varios Servicios</option>
-                            </select>
-                        </div>
+                                <option value="" disabled {{ old('servicio') ? '' : 'selected' }}>Selecciona un servicio</option>
+                                <option value="diseno" {{ old('servicio') === 'diseno' ? 'selected' : '' }}>Diseño Gráfico</option>
+                                <option value="marketing" {{ old('servicio') === 'marketing' ? 'selected' : '' }}>Marketing Digital</option>
+                                <option value="software" {{ old('servicio') === 'software' ? 'selected' : '' }}>Desarrollo de Software</option>
+                                <option value="multiple" {{ old('servicio') === 'multiple' ? 'selected' : '' }}>Varios Servicios</option>
                             </select>
                             @error('servicio')
                                 <p class="text-red-400 text-sm mt-1">{{ $message }}</p>
                             @enderror
                         </div>
                     
-                        <!-- Campo Teléfono -->
+                        <!-- Teléfono -->
                         <div class="mb-6">
                             <label for="telefono" class="block text-detail2 mb-2">Teléfono</label>
                             <input type="tel" id="telefono" name="telefono"
@@ -685,7 +685,7 @@
                                    placeholder="+57 300 123 4567">
                         </div>
                     
-                        <!-- Campo Mensaje -->
+                        <!-- Mensaje -->
                         <div class="mb-6">
                             <label for="mensaje" class="block text-detail2 mb-2">Describe tu proyecto</label>
                             <textarea id="mensaje" name="mensaje" rows="4"
@@ -700,6 +700,7 @@
                             Solicitar solución personalizada
                         </button>
                     </form>
+
                 </div>
             </div>
         </div>
@@ -707,71 +708,89 @@
 
     <!-- Footer -->
     <footer class="bg-primary3/80 backdrop-blur-sm border-t border-primary2/20 py-12">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center mb-4">
-                        <div class="bg-gradient-to-r from-primary1 to-primary2 w-10 h-10 rounded-full flex items-center justify-center text-white text-xl mr-2">
-                            <i class="fas fa-sync-alt"></i>
-                        </div>
-                        <span class="text-xl font-exo font-bold bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">KAMBIO <span class="font-light">KREATIVO</span></span>
-                    </div>
-                    <p class="text-detail2/80 mb-4">Transformamos ideas en experiencias digitales memorables.</p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-exo font-bold mb-4">Servicios</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Diseño Gráfico</a></li>
-                        <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Branding Corporativo</a></li>
-                        <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Marketing Digital</a></li>
-                        <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Desarrollo Web</a></li>
-                        <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Aplicaciones Móviles</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-exo font-bold mb-4">Enlaces Rápidos</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#inicio" class="text-detail2/80 hover:text-primary2 transition-colors">Inicio</a></li>
-                        <li><a href="#servicios" class="text-detail2/80 hover:text-primary2 transition-colors">Servicios</a></li>
-                        <li><a href="#portafolio" class="text-detail2/80 hover:text-primary2 transition-colors">Portafolio</a></li>
-                        <li><a href="#nosotros" class="text-detail2/80 hover:text-primary2 transition-colors">Nosotros</a></li>
-                        <li><a href="#contacto" class="text-detail2/80 hover:text-primary2 transition-colors">Contacto</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-exo font-bold mb-4">Newsletter</h3>
-                    <p class="text-detail2/80 mb-4">Suscríbete para recibir nuestras últimas novedades.</p>
-                    <form class="flex">
-                        <input type="email" placeholder="Tu correo" class="px-4 py-2 bg-primary3/50 border border-primary2/30 rounded-l-lg focus:outline-none text-white w-full">
-                        <button class="bg-gradient-to-r from-primary2 to-detail1 text-white px-4 rounded-r-lg">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
-                </div>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+          <!-- Marca + misión + redes -->
+          <div>
+            <div class="flex items-center mb-4">
+              <div class="bg-gradient-to-r from-primary1 to-primary2 w-10 h-10 rounded-full flex items-center justify-center text-white text-xl mr-2">
+                <i class="fas fa-sync-alt" aria-hidden="true"></i>
+              </div>
+              <span class="text-xl font-exo font-bold bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">
+                KAMBIO <span class="font-light">KREATIVO</span>
+              </span>
             </div>
-            
-            <div class="border-t border-primary2/20 mt-12 pt-8 text-center text-detail2/60">
-                <p>&copy; 2025 Kambio Kreativo. Todos los derechos reservados.</p>
+            <p class="text-detail2/80 mb-4">Transformamos ideas en experiencias digitales memorables.</p>
+            <div class="flex space-x-4">
+              <a href="#" aria-label="Facebook" class="text-detail2/80 hover:text-primary2 transition-colors">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="Instagram" class="text-detail2/80 hover:text-primary2 transition-colors">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="LinkedIn" class="text-detail2/80 hover:text-primary2 transition-colors">
+                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+              </a>
+              <a href="#" aria-label="Behance" class="text-detail2/80 hover:text-primary2 transition-colors">
+                <i class="fab fa-behance" aria-hidden="true"></i>
+              </a>
             </div>
+          </div>
+
+          <!-- Servicios -->
+          <div>
+            <h3 class="text-lg font-exo font-bold mb-4">Servicios</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Diseño Gráfico</a></li>
+              <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Branding Corporativo</a></li>
+              <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Marketing Digital</a></li>
+              <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Desarrollo Web</a></li>
+              <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Aplicaciones Móviles</a></li>
+            </ul>
+          </div>
+
+          <!-- Enlaces rápidos -->
+          <div>
+            <h3 class="text-lg font-exo font-bold mb-4">Enlaces rápidos</h3>
+            <ul class="space-y-2">
+              <li><a href="#inicio" class="text-detail2/80 hover:text-primary2 transition-colors">Inicio</a></li>
+              <li><a href="#servicios" class="text-detail2/80 hover:text-primary2 transition-colors">Servicios</a></li>
+              <li><a href="#portafolio" class="text-detail2/80 hover:text-primary2 transition-colors">Portafolio</a></li>
+              <li><a href="#nosotros" class="text-detail2/80 hover:text-primary2 transition-colors">Nosotros</a></li>
+              <li><a href="#contacto" class="text-detail2/80 hover:text-primary2 transition-colors">Contacto</a></li>
+            </ul>
+          </div>
+
+          <!-- Contacto -->
+          <div>
+            <h3 class="text-lg font-exo font-bold mb-4">Contacto</h3>
+            <ul class="space-y-2 text-detail2/80">
+              <li>
+                <span class="block">Email: <a href="mailto:info@kambiokreativo.com" class="hover:text-primary2 transition-colors">info@kambiokreativo.com</a></span>
+              </li>
+              <li>
+                <span class="block">Teléfono: <a href="tel:+573001234567" class="hover:text-primary2 transition-colors">+57 300 123 4567</a></span>
+              </li>
+              <li>
+                <span class="block">Ubicación: Ciudad, País</span>
+              </li>
+            </ul>
+          </div>
+
         </div>
+
+        <div class="border-t border-primary2/20 mt-12 pt-8 text-center text-detail2/60">
+          <p>&copy; <span id="current-year"></span> Kambio Kreativo. Todos los derechos reservados.</p>
+        </div>
+      </div>
+
+      <script>
+        // actualiza el año automáticamente
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+      </script>
     </footer>
+
     
     <script>
         // Animaciones para las partículas
