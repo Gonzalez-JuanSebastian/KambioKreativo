@@ -320,16 +320,16 @@
                 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-8">
-                    <a ref="{{ route('home') }}" class="font-medium hover:text-primary2 transition-colors group">
+                    <a href="{{ route('home') }}" class="font-medium hover:text-primary2 transition-colors group">
                         Inicio
                         <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
                     </a>
-                    <a href="{{ route('diseño') }}" class="font-medium hover:text-primary2 transition-colors group">
+                    <a href="{{ route('diseno') }}" class="font-medium hover:text-primary2 transition-colors group">
                         Diseño Grafico
                         <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
                     </a>
                     <a href="{{ route('desarrollo') }}" class="font-medium hover:text-primary2 transition-colors group">
-                        Diseño Grafico
+                        Desarrollo
                         <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
                     </a>
                     <a href="#servicios" class="font-medium hover:text-primary2 transition-colors group">

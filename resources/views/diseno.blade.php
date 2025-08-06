@@ -275,7 +275,8 @@
                 </a>
             </div>
         </div>
-    </header>
+    </header>                    <span class="bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">Transforma Marcas</span>
+
 
     <section class="hero-section pt-32 pb-24 relative overflow-hidden">
         <div class="absolute inset-0 grid-pattern"></div>
@@ -285,14 +286,14 @@
             <div class="max-w-2xl fade-in">
                 <h1 class="text-4xl md:text-6xl font-exo font-bold mb-6 hero-heading">
                     <span class="block">Diseño Gráfico que</span>
-                    <span class="bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">Transforma Marcas</span>
+                    <span class="text-[#1975BC] shadow-none">Transforma Marcas</span>
                 </h1>
                 <p class="text-xl text-white mb-10 animate-delay-100 fade-in hero-subheading">
                     Creamos identidades visuales poderosas que comunican la esencia de tu negocio y conectan emocionalmente con tu audiencia.
                 </p>
                 <div class="flex flex-wrap gap-4 animate-delay-200 fade-in">
                     <a href="#contacto" class="neon-btn text-white font-bold py-4 px-8 rounded-lg text-center flex items-center justify-center">
-                        <i class="fas fa-paper-plane mr-2 text-xl"></i> Solicitar diseño
+                        <i class="fas fa-paper-plane mr-2 text-xl"></i> Solicitar Proyecto
                     </a>
                     <a href="#beneficios" class="bg-transparent hover:bg-primary1/20 border-2 border-primary2 text-white font-bold py-4 px-8 rounded-lg text-center transition-colors">
                         Ver beneficios

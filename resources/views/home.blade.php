@@ -539,7 +539,7 @@
                     
                     <!-- Desktop Navigation -->
                     <nav class="hidden md:flex space-x-8">
-                        <a href="{{ route('diseño') }}"  class="font-medium hover:text-primary2 transition-colors group relative py-2">
+                        <a href="{{ route('diseno') }}"  class="font-medium hover:text-primary2 transition-colors group relative py-2">
                             Diseño
                             <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary2 to-detail1 group-hover:w-full transition-all duration-300"></div>
                         </a>
@@ -720,7 +720,7 @@
                             </li>
                         </ul>
                         <div class="text-center">
-                            <a href="{{ route('diseño') }}" class="inline-block neon-btn text-white px-6 py-3 rounded-full">
+                            <a href="{{ route('diseno') }}" class="inline-block neon-btn text-white px-6 py-3 rounded-full">
                                 Explorar más
                             </a>
                         </div>
