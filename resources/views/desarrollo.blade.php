@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desarrollo de Software | Kambio Kreativo</title>
+    <link rel="icon" type="image/png" href="{{ asset('img/Recurso 1.png') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -91,24 +92,6 @@
             box-shadow: 0 0 25px rgba(39, 158, 217, 0.8);
         }
         
-        .neon-btn::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -15%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.3), 
-                transparent);
-            transition: all 0.6s;
-        }
-        
-        .neon-btn:hover::after {
-            left: 20%;
-        }
-        
         .service-card {
             transition: all 0.4s ease;
             transform-style: preserve-3d;
@@ -182,6 +165,12 @@
         .icon-box:hover {
             transform: translateY(-5px) rotate(5deg);
         }
+
+        .footer-grid {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: space-between;
+        }
     </style> 
 </head>
 <body class="font-montserrat">
@@ -200,7 +189,10 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <div class="bg-gradient-to-r from-primary1 to-primary2 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-3 pulse">
-                        <i class="fas fa-sync-alt"></i>
+                        <a href="{{ route('home') }}">
+                            <img src="img/Recurso 1.png" alt="Kambio Kreativo Logo" class="logo-image w-full h-full object-contain"> 
+                        </a>
+
                     </div>
                     <span class="text-2xl font-exo font-bold bg-gradient-to-r from-white to-detail1 bg-clip-text bg-clip-text">KAMBIO  <span class="text-2xl font-exo font-light bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">KREATIVO</span> </span> 
                 </div>
@@ -213,6 +205,10 @@
                     </a>
                     <a href="{{ route('diseño') }}" class="font-medium hover:text-primary2 transition-colors group">
                         Diseño Grafico
+                        <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
+                    </a>
+                    <a href="{{ route('marketing') }}" class="font-medium hover:text-primary2 transition-colors group">
+                        Marketing
                         <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
                     </a>
                     <a href="#beneficios" class="font-medium hover:text-primary2 transition-colors group">
@@ -691,11 +687,11 @@
     <!-- Footer -->
     <footer class="bg-primary3/80 backdrop-blur-sm border-t border-primary2/20 py-12">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="footer-grid">
                 <div>
                     <div class="flex items-center mb-4">
                         <div class="bg-gradient-to-r from-primary1 to-primary2 w-10 h-10 rounded-full flex items-center justify-center text-white text-xl mr-2">
-                            <i class="fas fa-sync-alt"></i>
+                            <img src="img/Recurso 1.png" alt="Kambio Kreativo Logo" class="logo-image w-full h-full object-contain"> 
                         </div>
                         <span class="text-xl font-exo font-bold bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">KAMBIO <span class="font-light">KREATIVO</span></span>
                     </div>
@@ -714,26 +710,6 @@
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-exo font-bold mb-4">Servicios</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Desarrollo de Software</a></li>
-                        <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Aplicaciones Web</a></li>
-                        <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Sistemas Empresariales</a></li>
-                        <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Automatización</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-exo font-bold mb-4">Enlaces</h3>
-                    <ul class="space-y-2">
-                        <li><a href="/" class="text-detail2/80 hover:text-primary2 transition-colors">Inicio</a></li>
-                        <li><a href="#beneficios" class="text-detail2/80 hover:text-primary2 transition-colors">Beneficios</a></li>
-                        <li><a href="#soluciones" class="text-detail2/80 hover:text-primary2 transition-colors">Soluciones</a></li>
-                        <li><a href="#automatizacion" class="text-detail2/80 hover:text-primary2 transition-colors">Automatización</a></li>
-                    </ul>
                 </div>
                 
                 <div>
