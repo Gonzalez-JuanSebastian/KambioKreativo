@@ -28,9 +28,9 @@ Route::get('/desarrollo-software', function () {
 
 Route::post('/contacto', [ContactoController::class, 'store'])->name('contacto.store');
 
-Route::get('/diseño', function () {
-    return view('diseño');
-})->name('diseño');
+Route::get('/diseno', function () {
+    return view('diseno');
+})->name('diseno');
 
 Route::get('/desarrollo', function () {
     return view('desarrollo');
