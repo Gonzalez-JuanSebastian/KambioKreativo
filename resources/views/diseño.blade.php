@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diseño Gráfico | Kambio Kreativo</title>
+    <link rel="icon" type="image/png" href="{{ asset('img/Recurso 1.png') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -101,24 +102,6 @@
             box-shadow: 0 0 25px rgba(39, 158, 217, 0.8);
         }
         
-        .neon-btn::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -15%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.3), 
-                transparent);
-            transition: all 0.6s;
-        }
-        
-        .neon-btn:hover::after {
-            left: 20%;
-        }
-        
         .service-card {
             transition: all 0.4s ease;
             transform-style: preserve-3d;
@@ -206,6 +189,12 @@
         .need-card:hover {
             transform: scale(1.03);
         }
+
+        .footer-grid {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <body class="font-montserrat">
@@ -224,7 +213,9 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <div class="bg-gradient-to-r from-primary1 to-primary2 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-3 pulse">
-                        <i class="fas fa-sync-alt"></i>
+                        <a href="{{ route('home') }}">
+                            <img src="img/Recurso 1.png" alt="Kambio Kreativo Logo" class="logo-image w-full h-full object-contain"> 
+                        </a>          
                     </div>
 
                     <span class="text-2xl font-exo font-bold bg-gradient-to-r from-white to-detail1 bg-clip-text">KAMBIO  <span class="text-2xl font-exo font-light bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">KREATIVO</span> </span> 
@@ -242,20 +233,18 @@
                         <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
                     </a>
 
+                    <a href="{{ route('marketing') }}" class="font-medium hover:text-primary2 transition-colors group">
+                        Marketing
+                        <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
+                    </a>
+
                     <a href="#beneficios" class="font-medium hover:text-primary2 transition-colors group">
                         Beneficios
                         <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
                     </a>
+
                     <a href="#servicios" class="font-medium hover:text-primary2 transition-colors group">
                         Servicios
-                        <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
-                    </a>
-                    <a href="#necesidades" class="font-medium hover:text-primary2 transition-colors group">
-                        Necesidades
-                        <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
-                    </a>
-                    <a href="#contacto" class="font-medium hover:text-primary2 transition-colors group">
-                        Contacto
                         <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
                     </a>
                 </nav>
@@ -597,7 +586,15 @@
             <div class="max-w-2xl mx-auto">
                 <!-- Formulario de contacto -->
                 <div id="contacto-form" class="tech-border p-8 rounded-2xl fade-in animate-delay-100">
-                    <form method="POST" action="#contacto-form">
+                        @if(session('success'))
+                            <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative">
+                                <strong class="font-bold">¡Éxito!</strong>
+                                <span class="block sm:inline">{{ session('success') }}</span>
+                            </div>
+                        @endif
+
+                    <form method="POST" action="{{ route('contacto.store') }}#contacto-form">
+                    @csrf
                         <!-- Campo Nombre -->
                         <div class="mb-6">
                             <label for="nombre" class="block text-detail2 mb-2">Nombre completo</label>
@@ -665,7 +662,7 @@
     <!-- Footer -->
     <footer class="bg-primary3/80 backdrop-blur-sm border-t border-primary2/20 py-12">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="footer-grid">
                 <div>
                     <div class="flex items-center mb-4">
                         <div class="bg-gradient-to-r from-primary1 to-primary2 w-10 h-10 rounded-full flex items-center justify-center text-white text-xl mr-2">
@@ -684,30 +681,7 @@
                         <a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">
-                            <i class="fab fa-behance"></i>
-                        </a>
                     </div>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-exo font-bold mb-4">Servicios</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Diseño Gráfico</a></li>
-                        <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Branding Corporativo</a></li>
-                        <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Marketing Digital</a></li>
-                        <li><a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">Desarrollo Web</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3 class="text-lg font-exo font-bold mb-4">Enlaces</h3>
-                    <ul class="space-y-2">
-                        <li><a href="/" class="text-detail2/80 hover:text-primary2 transition-colors">Inicio</a></li>
-                        <li><a href="#beneficios" class="text-detail2/80 hover:text-primary2 transition-colors">Beneficios</a></li>
-                        <li><a href="#servicios" class="text-detail2/80 hover:text-primary2 transition-colors">Servicios</a></li>
-                        <li><a href="#necesidades" class="text-detail2/80 hover:text-primary2 transition-colors">Necesidades</a></li>
-                    </ul>
                 </div>
                 
                 <div>
@@ -715,7 +689,7 @@
                     <ul class="space-y-3">
                         <li class="flex items-start">
                             <i class="fas fa-map-marker-alt text-primary2 mt-1 mr-3"></i>
-                            <span class="text-detail2/80">Calle 123 #45-67, Bogotá, Colombia</span>
+                            <span class="text-detail2/80">Cali, Colombia</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-phone-alt text-primary2 mt-1 mr-3"></i>

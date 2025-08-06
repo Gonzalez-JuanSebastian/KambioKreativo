@@ -481,9 +481,9 @@
         }
         
         .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem; /* 24px */
+            display: flex;
+            gap: 1.5rem;
+            justify-content: space-between;
         }
         
         .footer-border-top {
@@ -557,10 +557,6 @@
                         </a>
                         <a href="#resultados" class="font-medium hover:text-primary2 transition-colors group relative py-2">
                             Resultados
-                            <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary2 to-detail1 group-hover:w-full transition-all duration-300"></div>
-                        </a>
-                        <a href="#contacto" class="font-medium hover:text-primary2 transition-colors group relative py-2">
-                            Contacto
                             <div class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary2 to-detail1 group-hover:w-full transition-all duration-300"></div>
                         </a>
                     </nav>
@@ -1034,7 +1030,7 @@
                     <div>
                         <div class="flex items-center mb-4">
                             <div class="bg-gradient-to-r from-primary1 to-primary2 w-10 h-10 rounded-full flex items-center justify-center text-white text-xl mr-2">
-                                <i class="fas fa-sync-alt"></i>
+                                <img src="img/Recurso 1.png" alt="Kambio Kreativo Logo" class="logo-image w-full h-full object-contain"> 
                             </div>
                             <span class="text-xl font-exo font-bold bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">
                                 KAMBIO <span class="font-light text-white">KREATIVO</span>
@@ -1052,30 +1048,6 @@
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
                         </div>
-                    </div>
-
-                    <!-- Servicios -->
-                    <div>
-                        <h3 class="text-lg font-exo font-bold mb-4 text-white">Servicios</h3>
-                        <ul class="space-y-2">
-                            <li><a href="#" class="text-detail2/80 hover:text-white transition-colors">Diseño Gráfico</a></li>
-                            <li><a href="#" class="text-detail2/80 hover:text-white transition-colors">Branding Corporativo</a></li>
-                            <li><a href="#" class="text-detail2/80 hover:text-white transition-colors">Marketing Digital</a></li>
-                            <li><a href="#" class="text-detail2/80 hover:text-white transition-colors">Desarrollo Web</a></li>
-                            <li><a href="#" class="text-detail2/80 hover:text-white transition-colors">Aplicaciones Móviles</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Enlaces rápidos -->
-                    <div>
-                        <h3 class="text-lg font-exo font-bold mb-4 text-white">Explorar</h3>
-                        <ul class="space-y-2">
-                            <li><a href="#inicio" class="text-detail2/80 hover:text-white transition-colors">Inicio</a></li>
-                            <li><a href="#servicios" class="text-detail2/80 hover:text-white transition-colors">Servicios</a></li>
-                            <li><a href="#proceso" class="text-detail2/80 hover:text-white transition-colors">Proceso</a></li>
-                            <li><a href="#resultados" class="text-detail2/80 hover:text-white transition-colors">Resultados</a></li>
-                            <li><a href="#contacto" class="text-detail2/80 hover:text-white transition-colors">Contacto</a></li>
-                        </ul>
                     </div>
 
                     <!-- Contacto -->

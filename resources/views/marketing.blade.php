@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigitalGrowth | Agencia de Marketing Digital</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Marketing | Kambio Kreativo</title>
+    <link rel="icon" type="image/png" href="{{ asset('img/Recurso 1.png') }}">    <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -87,24 +87,6 @@
         .neon-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 0 25px rgba(39, 158, 217, 0.8);
-        }
-        
-        .neon-btn::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent, 
-                rgba(255, 255, 255, 0.3), 
-                transparent);
-            transition: all 0.6s;
-        }
-        
-        .neon-btn:hover::after {
-            left: 100%;
         }
         
         .service-card {
@@ -305,6 +287,12 @@
             background: rgba(39, 158, 217, 0.5);
             margin: 0 auto;
         }
+
+        .footer-grid {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: space-between;
+        }
     </style>
 </head>
 <body class="font-montserrat">
@@ -323,15 +311,25 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
                     <div class="bg-gradient-to-r from-primary1 to-primary2 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-3 pulse">
-                        <i class="fas fa-chart-line"></i>
+                        <a href="{{ route('home') }}">
+                            <img src="img/Recurso 1.png" alt="Kambio Kreativo Logo" class="logo-image w-full h-full object-contain"> 
+                        </a>           
                     </div>
-                    <span class="text-2xl font-exo font-bold bg-gradient-to-r from-white to-detail1 bg-clip-text">DIGITAL<span class="text-2xl font-exo font-light bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">GROWTH</span></span>
+                    <span class="text-2xl font-exo font-bold bg-gradient-to-r from-white to-detail1 bg-clip-text">KAMBIO  <span class="text-2xl font-exo font-light bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">KREATIVO</span></span> 
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex space-x-8">
-                    <a href="#inicio" class="font-medium hover:text-primary2 transition-colors group">
+                    <a ref="{{ route('home') }}" class="font-medium hover:text-primary2 transition-colors group">
                         Inicio
+                        <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
+                    </a>
+                    <a href="{{ route('diseño') }}" class="font-medium hover:text-primary2 transition-colors group">
+                        Diseño Grafico
+                        <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
+                    </a>
+                    <a href="{{ route('desarrollo') }}" class="font-medium hover:text-primary2 transition-colors group">
+                        Diseño Grafico
                         <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
                     </a>
                     <a href="#servicios" class="font-medium hover:text-primary2 transition-colors group">
@@ -344,10 +342,6 @@
                     </a>
                     <a href="#resultados" class="font-medium hover:text-primary2 transition-colors group">
                         Resultados
-                        <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
-                    </a>
-                    <a href="#contacto" class="font-medium hover:text-primary2 transition-colors group">
-                        Contacto
                         <div class="h-0.5 bg-gradient-to-r from-primary2 to-detail1 scale-x-0 group-hover:scale-x-100 transition-transform"></div>
                     </a>
                 </nav>
@@ -821,7 +815,7 @@
                             </div>
                             <div>
                                 <h3 class="font-bold text-lg">Email</h3>
-                                <p class="text-detail2/80">contacto@digitalgrowth.com</p>
+                                <p class="text-detail2/80">tecnologia@kambiokreativo.com</p>
                             </div>
                         </div>
                         
@@ -841,7 +835,7 @@
                             </div>
                             <div>
                                 <h3 class="font-bold text-lg">Ubicación</h3>
-                                <p class="text-detail2/80">Carrera 45 #99-20, Bogotá, Colombia</p>
+                                <p class="text-detail2/80">Cali, Colombia</p>
                             </div>
                         </div>
                     </div>
@@ -857,35 +851,42 @@
                             <a href="#" class="w-10 h-10 bg-primary1/20 rounded-full flex items-center justify-center text-detail2 hover:text-white hover:bg-blue-600 transition-colors">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#" class="w-10 h-10 bg-primary1/20 rounded-full flex items-center justify-center text-detail2 hover:text-white hover:bg-blue-800 transition-colors">
-                                <i class="fab fa-tiktok"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <div class="tech-border p-8 rounded-2xl fade-in animate-delay-100">
+                <div id="contacto-form" class="tech-border p-8 rounded-2xl fade-in animate-delay-100">
                     <h3 class="text-2xl font-exo font-bold mb-6 text-center">Solicita tu estrategia personalizada</h3>
-                    <form>
+                
+                    @if(session('success'))
+                        <div class="mb-6 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative">
+                            <strong class="font-bold">¡Éxito!</strong>
+                            <span class="block sm:inline">{{ session('success') }}</span>
+                        </div>
+                    @endif
+                    
+                    <form method="POST" action="{{ route('contacto.store') }}#contacto-form">
+                        @csrf
+                    
                         <div class="mb-6">
                             <label for="nombre" class="block text-detail2 mb-2">Nombre completo</label>
-                            <input type="text" id="nombre" class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white" required>
+                            <input type="text" id="nombre" name="nombre" class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white" required>
                         </div>
-                        
+                    
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                             <div>
                                 <label for="email" class="block text-detail2 mb-2">Correo electrónico</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white" required>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white" required>
                             </div>
                             <div>
                                 <label for="empresa" class="block text-detail2 mb-2">Empresa</label>
-                                <input type="text" id="empresa" class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white">
+                                <input type="text" id="empresa" name="empresa" class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white">
                             </div>
                         </div>
-                        
+                    
                         <div class="mb-6">
                             <label for="servicio" class="block text-detail2 mb-2">Servicio de interés</label>
-                            <select id="servicio" class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white" required>
+                            <select id="servicio" name="servicio" class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white" required>
                                 <option value="">Selecciona un servicio</option>
                                 <option value="seo">SEO & Posicionamiento</option>
                                 <option value="ads">Publicidad Digital</option>
@@ -894,28 +895,18 @@
                                 <option value="todo">Todos los servicios</option>
                             </select>
                         </div>
-                        
-                        <div class="mb-6">
-                            <label for="presupuesto" class="block text-detail2 mb-2">Presupuesto mensual</label>
-                            <select id="presupuesto" class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white" required>
-                                <option value="">Selecciona un rango</option>
-                                <option value="500-1000">$500 - $1,000 USD</option>
-                                <option value="1000-3000">$1,000 - $3,000 USD</option>
-                                <option value="3000-5000">$3,000 - $5,000 USD</option>
-                                <option value="5000+">Más de $5,000 USD</option>
-                            </select>
-                        </div>
-                        
+                    
                         <div class="mb-6">
                             <label for="mensaje" class="block text-detail2 mb-2">Describe tus objetivos</label>
-                            <textarea id="mensaje" rows="4" class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white" required></textarea>
+                            <textarea id="mensaje" name="mensaje" rows="4" class="w-full px-4 py-3 bg-primary3/30 border border-primary2/30 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary2 text-white" required></textarea>
                         </div>
-                        
+                    
                         <button type="submit" class="w-full neon-btn text-white font-bold py-4 rounded-lg">
                             Solicitar estrategia
                         </button>
                     </form>
                 </div>
+
             </div>
         </div>
     </section>
@@ -923,16 +914,14 @@
     <!-- Footer -->
     <footer class="bg-primary3/80 backdrop-blur-sm border-t border-primary2/20 py-12">
       <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="footer-grid">
           <!-- Marca + misión + redes -->
           <div>
             <div class="flex items-center mb-4">
               <div class="bg-gradient-to-r from-primary1 to-primary2 w-10 h-10 rounded-full flex items-center justify-center text-white text-xl mr-2">
                 <i class="fas fa-chart-line"></i>
               </div>
-              <span class="text-xl font-exo font-bold bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">
-                DIGITAL<span class="font-light">GROWTH</span>
-              </span>
+                    <span class="text-xl font-exo font-bold bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">KAMBIO <span class="font-light">KREATIVO</span></span>
             </div>
             <p class="text-detail2/80 mb-4">Transformamos visitantes en clientes con estrategias de marketing digital efectivas.</p>
             <div class="flex space-x-4">
@@ -945,34 +934,7 @@
               <a href="#" aria-label="LinkedIn" class="text-detail2/80 hover:text-primary2 transition-colors">
                 <i class="fab fa-linkedin-in" aria-hidden="true"></i>
               </a>
-              <a href="#" aria-label="TikTok" class="text-detail2/80 hover:text-primary2 transition-colors">
-                <i class="fab fa-tiktok" aria-hidden="true"></i>
-              </a>
             </div>
-          </div>
-
-          <!-- Servicios -->
-          <div>
-            <h3 class="text-lg font-exo font-bold mb-4">Servicios</h3>
-            <ul class="space-y-2">
-              <li><a href="#servicios" class="text-detail2/80 hover:text-primary2 transition-colors">SEO & Posicionamiento</a></li>
-              <li><a href="#servicios" class="text-detail2/80 hover:text-primary2 transition-colors">Publicidad Digital</a></li>
-              <li><a href="#servicios" class="text-detail2/80 hover:text-primary2 transition-colors">Social Media</a></li>
-              <li><a href="#estrategia" class="text-detail2/80 hover:text-primary2 transition-colors">Embudos de Ventas</a></li>
-              <li><a href="#estrategia" class="text-detail2/80 hover:text-primary2 transition-colors">Automatización</a></li>
-            </ul>
-          </div>
-
-          <!-- Enlaces rápidos -->
-          <div>
-            <h3 class="text-lg font-exo font-bold mb-4">Enlaces rápidos</h3>
-            <ul class="space-y-2">
-              <li><a href="#inicio" class="text-detail2/80 hover:text-primary2 transition-colors">Inicio</a></li>
-              <li><a href="#servicios" class="text-detail2/80 hover:text-primary2 transition-colors">Servicios</a></li>
-              <li><a href="#estrategia" class="text-detail2/80 hover:text-primary2 transition-colors">Estrategia</a></li>
-              <li><a href="#resultados" class="text-detail2/80 hover:text-primary2 transition-colors">Resultados</a></li>
-              <li><a href="#contacto" class="text-detail2/80 hover:text-primary2 transition-colors">Contacto</a></li>
-            </ul>
           </div>
 
           <!-- Contacto -->
@@ -980,21 +942,21 @@
             <h3 class="text-lg font-exo font-bold mb-4">Contacto</h3>
             <ul class="space-y-2 text-detail2/80">
               <li>
-                <span class="block">Email: <a href="mailto:info@digitalgrowth.com" class="hover:text-primary2 transition-colors">info@digitalgrowth.com</a></span>
+                <span class="block">Email: <a href="mailto:tecnologia@kambiokreativo.com" class="hover:text-primary2 transition-colors">tecnologia@kambiokreativo.com</a></span>
               </li>
               <li>
                 <span class="block">Teléfono: <a href="tel:+573001234567" class="hover:text-primary2 transition-colors">+57 300 123 4567</a></span>
               </li>
               <li>
-                <span class="block">Ubicación: Bogotá, Colombia</span>
+                <span class="block">Ubicación: Cali, Colombia</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div class="border-t border-primary2/20 mt-12 pt-8 text-center text-detail2/60">
-          <p>&copy; <span id="current-year"></span> DigitalGrowth. Todos los derechos reservados.</p>
-        </div>
+            <div class="border-t border-primary2/20 mt-12 pt-8 text-center text-detail2/60">
+                <p>&copy; 2025 Kambio Kreativo. Todos los derechos reservados.</p>
+            </div>
       </div>
     </footer>
 

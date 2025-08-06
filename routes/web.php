@@ -5,9 +5,13 @@ use App\Http\Controllers\ContactoController;
 
 
 // Página principal
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
 
 // Páginas de servicios específicos
 Route::get('/diseno-grafico', function () {
