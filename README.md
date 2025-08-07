@@ -61,7 +61,7 @@ composer install
 # Instalar dependencias de Node.js
 npm install
 
-# Copiar el archivo .env.example a .env
+# Copiar el archivo .env.example a .env JuanSeCoal1.
 cp .env.example .env
 
 # Generar la clave de aplicación
