@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marketing | Kambio Kreativo</title>
-    <link rel="icon" type="image/png" href="{{ asset('img/Recurso 1.png') }}">    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/Recurso1.png') }}">    
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -312,7 +313,7 @@
                 <div class="flex items-center">
                     <div class="bg-gradient-to-r from-primary1 to-primary2 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-3 pulse">
                         <a href="{{ route('home') }}">
-                            <img src="img/Recurso 1.png" alt="Kambio Kreativo Logo" class="logo-image w-full h-full object-contain"> 
+                            <img src="img/Recurso1.png" alt="Kambio Kreativo Logo" class="logo-image w-full h-full object-contain"> 
                         </a>           
                     </div>
                     <span class="text-2xl font-exo font-bold bg-gradient-to-r from-white to-detail1 bg-clip-text">KAMBIO  <span class="text-2xl font-exo font-light bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">KREATIVO</span></span> 
@@ -361,16 +362,15 @@
         
         <!-- Mobile Navigation -->
         <div x-show="mobileMenuOpen" class="md:hidden bg-black/95 backdrop-blur-lg absolute top-full w-full" x-transition>
-            <div class="container mx-auto px-4 py-6 flex flex-col space-y-4">
-                <a href="#inicio" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Inicio</a>
-                <a href="#servicios" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Servicios</a>
-                <a href="#estrategia" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Estrategia</a>
-                <a href="#resultados" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Resultados</a>
-                <a href="#contacto" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Contacto</a>
-                <a href="#contacto" class="neon-btn text-white px-6 py-3 rounded-full font-medium text-center flex items-center justify-center">
-                    <i class="fas fa-paper-plane mr-2"></i> Contactar
-                </a>
-            </div>
+                    <div class="container mx-auto px-4 py-6 flex flex-col space-y-4">
+                        <a href="{{ route('desarrollo') }}" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Desarrollo</a>
+                        <a href="{{ route('marketing') }}" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Marketing</a>
+                        <a href="#servicios" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Servicios</a>
+                        <a href="#estrategia" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Embudos</a>
+                        <a href="#contacto" class="neon-btn text-white px-6 py-3 rounded-full font-medium text-center flex items-center justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Contactar
+                        </a>
+                    </div>
         </div>
     </header>
 
@@ -911,53 +911,57 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-primary3/80 backdrop-blur-sm border-t border-primary2/20 py-12">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="footer-grid">
-          <!-- Marca + misión + redes -->
-          <div>
-            <div class="flex items-center mb-4">
-              <div class="bg-gradient-to-r from-primary1 to-primary2 w-10 h-10 rounded-full flex items-center justify-center text-white text-xl mr-2">
-                <i class="fas fa-chart-line"></i>
-              </div>
-                    <span class="text-xl font-exo font-bold bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">KAMBIO <span class="font-light">KREATIVO</span></span>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="footer-grid">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gradient-to-r from-primary1 to-primary2 w-10 h-10 rounded-full flex items-center justify-center text-white text-xl mr-2">
+                            <img src="img/Recurso1.png" alt="Kambio Kreativo Logo" class="logo-image w-full h-full object-contain"> 
+                        </div>
+                        <span class="text-xl font-exo font-bold bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">KAMBIO <span class="font-light">KREATIVO</span></span>
+                    </div>
+                    <p class="text-detail2/80 mb-4">Transformamos ideas en experiencias digitales memorables.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-detail2/80 hover:text-primary2 transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-exo font-bold mb-4">Contacto</h3>
+                    <ul class="space-y-3">
+                        <!-- Footer -->
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary2 mt-1 mr-3"></i>
+                            <span class="text-detail2/80">Cali, Colombia</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-phone-alt text-primary2 mt-1 mr-3"></i>
+                            <span class="text-detail2/80">+57 123 456 7890</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-envelope text-primary2 mt-1 mr-3"></i>
+                            <span class="text-detail2/80">info@kambiokreativo.com</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <p class="text-detail2/80 mb-4">Transformamos visitantes en clientes con estrategias de marketing digital efectivas.</p>
-            <div class="flex space-x-4">
-              <a href="#" aria-label="Facebook" class="text-detail2/80 hover:text-primary2 transition-colors">
-                <i class="fab fa-facebook-f" aria-hidden="true"></i>
-              </a>
-              <a href="#" aria-label="Instagram" class="text-detail2/80 hover:text-primary2 transition-colors">
-                <i class="fab fa-instagram" aria-hidden="true"></i>
-              </a>
-              <a href="#" aria-label="LinkedIn" class="text-detail2/80 hover:text-primary2 transition-colors">
-                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Contacto -->
-          <div>
-            <h3 class="text-lg font-exo font-bold mb-4">Contacto</h3>
-            <ul class="space-y-2 text-detail2/80">
-              <li>
-                <span class="block">Email: <a href="mailto:tecnologia@kambiokreativo.com" class="hover:text-primary2 transition-colors">tecnologia@kambiokreativo.com</a></span>
-              </li>
-              <li>
-                <span class="block">Teléfono: <a href="tel:+573001234567" class="hover:text-primary2 transition-colors">+57 300 123 4567</a></span>
-              </li>
-              <li>
-                <span class="block">Ubicación: Cali, Colombia</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
+            
             <div class="border-t border-primary2/20 mt-12 pt-8 text-center text-detail2/60">
                 <p>&copy; 2025 Kambio Kreativo. Todos los derechos reservados.</p>
             </div>
-      </div>
+        </div>
     </footer>
 
     <!-- WhatsApp Flotante -->

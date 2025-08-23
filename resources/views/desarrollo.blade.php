@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desarrollo de Software | Kambio Kreativo</title>
-    <link rel="icon" type="image/png" href="{{ asset('img/Recurso 1.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('img/Recurso1.png') }}">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -190,7 +190,7 @@
                 <div class="flex items-center">
                     <div class="bg-gradient-to-r from-primary1 to-primary2 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-3 pulse">
                         <a href="{{ route('home') }}">
-                            <img src="img/Recurso 1.png" alt="Kambio Kreativo Logo" class="logo-image w-full h-full object-contain"> 
+                            <img src="img/Recurso1.png" alt="Kambio Kreativo Logo" class="logo-image w-full h-full object-contain"> 
                         </a>
 
                     </div>
@@ -241,11 +241,10 @@
         <!-- Mobile Navigation -->
         <div x-show="mobileMenuOpen" class="md:hidden bg-black/95 backdrop-blur-lg absolute top-full w-full" x-transition>
             <div class="container mx-auto px-4 py-6 flex flex-col space-y-4">
-                <a href="/" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Inicio</a>
-                <a href="#beneficios" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Beneficios</a>
-                <a href="#soluciones" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Soluciones</a>
-                <a href="#automatizacion" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Automatización</a>
-                <a href="#proceso" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Proceso</a>
+                        <a href="{{ route('diseno') }}" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Diseño</a>
+                        <a href="{{ route('marketing') }}" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Marketing</a>
+                        <a href="#soluciones" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Soluciones</a>
+                        <a href="#automatizacion" class="font-medium hover:text-primary2 transition-colors py-2 border-b border-primary2/20" @click="mobileMenuOpen = false">Automatización</a>
                 <a href="#contacto" class="neon-btn text-white px-6 py-3 rounded-full font-medium text-center flex items-center justify-center">
                     <i class="fas fa-paper-plane mr-2"></i> Contactar
                 </a>
@@ -691,7 +690,7 @@
                 <div>
                     <div class="flex items-center mb-4">
                         <div class="bg-gradient-to-r from-primary1 to-primary2 w-10 h-10 rounded-full flex items-center justify-center text-white text-xl mr-2">
-                            <img src="img/Recurso 1.png" alt="Kambio Kreativo Logo" class="logo-image w-full h-full object-contain"> 
+                            <img src="img/Recurso1.png" alt="Kambio Kreativo Logo" class="logo-image w-full h-full object-contain"> 
                         </div>
                         <span class="text-xl font-exo font-bold bg-gradient-to-r from-primary2 to-detail1 text-transparent bg-clip-text">KAMBIO <span class="font-light">KREATIVO</span></span>
                     </div>
@@ -716,17 +715,17 @@
                     <h3 class="text-lg font-exo font-bold mb-4">Contacto</h3>
                     <ul class="space-y-3">
                         <!-- Footer -->
-                        {{-- <li class="flex items-start">
+                        <li class="flex items-start">
                             <i class="fas fa-map-marker-alt text-primary2 mt-1 mr-3"></i>
-                            <span class="text-detail2/80">Calle 123 #45-67, Bogotá, Colombia</span>
-                        </li> --}}
+                            <span class="text-detail2/80">Cali, Colombia</span>
+                        </li>
                         <li class="flex items-start">
                             <i class="fas fa-phone-alt text-primary2 mt-1 mr-3"></i>
-                            <span class="text-detail2/80">+57 318 401 3924</span>
+                            <span class="text-detail2/80">+57 123 456 7890</span>
                         </li>
                         <li class="flex items-start">
                             <i class="fas fa-envelope text-primary2 mt-1 mr-3"></i>
-                            <span class="text-detail2/80">tecnologia@kambiokreativo.com</span>
+                            <span class="text-detail2/80">info@kambiokreativo.com</span>
                         </li>
                     </ul>
                 </div>
@@ -739,9 +738,9 @@
     </footer>
 
     <!-- WhatsApp -->
-    <a href="https://wa.me/573184013924" class="btn-whatsapp" target="_blank" aria-label="Chatea con nosotros por WhatsApp">
-      <i class="fab fa-whatsapp"></i>
-    </a>
+        <a href="https://wa.me/573184013924" class="fixed bottom-6 right-6 w-14 h-14 bg-green-500 rounded-full flex items-center justify-center text-white text-2xl z-50 hover:bg-green-600 transition-colors shadow-lg" aria-label="Chatea con nosotros por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     
     <script>
         // Animaciones para las partículas
@@ -777,7 +776,6 @@
 
         
     </script>
-    // validacion formulario 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Manejar el desplazamiento después del envío
